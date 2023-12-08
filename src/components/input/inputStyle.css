@@ -1,0 +1,10 @@
+/* .input-container:focus-within{
+    outline: 2px solid #FDF7E4;
+    outline-offset: 1px;
+}
+ */
+input{
+    outline: none;
+    border: none;
+}
+

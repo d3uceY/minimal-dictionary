@@ -4,6 +4,7 @@ import { useInput } from '../context/InputContext'
 import Meaning from './Meaning.jsx'
 import Phonetic from './Phonetic'
 import PartOfSpeech from './PartOfSpeech.jsx'
+import gsap from 'gsap'
 
 
 axios.defaults.baseURL = "https://api.dictionaryapi.dev/api/v2/entries/en"
@@ -79,6 +80,7 @@ export default function Results() {
 
 
 
+
     if (loading) {
         return (
             <div className='flex h-screen items-center pl-4'>
@@ -115,12 +117,12 @@ export default function Results() {
         <div className="results pl-6 flex h-screen items-center">
             {response && (
                 <div>
-                    <h2 className='font-mono text-[2rem] md:text-[5rem] lg:text-[10rem] text-grey-4'>{inputValue}</h2>
-                    <div className='font-edu lg:text-2xl md:text-xl mb-3 font-bold flex items-center gap-4'>
+                    <h2 className='font-mono text-[2rem] md:text-[5rem] lg:text-[10rem] text-grey-4' id='word'>{inputValue}</h2>
+                    <div className='font-edu lg:text-2xl md:text-xl mb-3 font-bold flex items-center gap-4' id='phonetics'>
                         <Phonetic mean={phonetic} />
                         <PartOfSpeech mean={partOfSpeach} />
                     </div>
-                    <div className='font-mono max-w-md text-grey-4 md:text-[1.5rem] lg:text-[2rem] mt-7'>
+                    <div className='font-mono max-w-md text-grey-4 md:text-[1.5rem] lg:text-[2rem] mt-7' id='meaning'>
                         <Meaning mean={meaning} />
                     </div>
                 </div>

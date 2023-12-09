@@ -2,8 +2,8 @@ import React from 'react'
 
 export default function Phonetic({ mean }) {
     return (
-        <p>
+        <h3>
             {mean}
-        </p>
+        </h3>
     )
 }

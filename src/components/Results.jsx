@@ -4,7 +4,6 @@ import { useInput } from '../context/InputContext'
 import Meaning from './Meaning.jsx'
 import Phonetic from './Phonetic'
 import PartOfSpeech from './PartOfSpeech.jsx'
-import gsap from 'gsap'
 
 
 axios.defaults.baseURL = "https://api.dictionaryapi.dev/api/v2/entries/en"
@@ -111,7 +110,6 @@ export default function Results() {
 
 
 
-    // console.log(response[0].meanings[0].definitions[0].definition)
 
     return (
         <div className="results pl-6 flex h-screen items-center">

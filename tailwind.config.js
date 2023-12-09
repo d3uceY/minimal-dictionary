@@ -15,7 +15,8 @@ export default {
       fontFamily: {
         'edu': ['"Edu TAS Beginner"', 'cursive'],
         'mono': ['"Spline Sans Mono"', 'monospace'],
-        'zen': ['"Zen Dots"', 'sans-serif']
+        'zen': ['"Zen Dots"', 'sans-serif'],
+        'play': ['"Playfair Display"', 'sans-serif']
       }
     },
   },

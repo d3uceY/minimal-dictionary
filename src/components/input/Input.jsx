@@ -33,20 +33,20 @@ export default function Input() {
 
   return (
     <div className='input-wrapper p-4 bg-grey-4 flex gap-2 md:flex-col justify-center md:justify-between items-center md:h-screen md:w-1/3'>
-      <h1 className='md:text-2xl hidden md:block font-semibold text-grey-1 font-zen'>Minimal</h1>
+      <h1 className='md:text-2xl hidden md:block font-semibold text-grey-1 font-play header-text-1'>Minimal</h1>
       <div>
         <div className='input-container max-w-[300px] flex mx-auto h-[48px] rounded-lg overflow-hidden'>
           <input
             type="text"
             placeholder='search'
-            className='w-[80%] p-4 bg-grey-1 placeholder:text-grey-4 placeholder:capitalize '
+            className='w-[80%] p-4 bg-grey-1 placeholder:text-grey-3 placeholder:capitalize text-grey-4 font-semibold'
             onChange={handleInputChange}
             onKeyDown={handleKeyDown}
             value={value}
           />
 
           <button
-            className='w-[20%] flex justify-center items-center bg-grey-3 active:bg-grey-2'
+            className='w-[20%] flex justify-center items-center bg-grey-3 active:bg-grey-2 '
             onClick={handleSubmit}
           >
             <img className='' src="/src/assets/search.svg" alt="search-icon" />
@@ -56,7 +56,7 @@ export default function Input() {
         {/* {inputValue && (<p className='text-grey-1 text-center capitalize font-bold mt-2'>result for: <span className='font-light'> {inputValue}</span></p>
         )} */}
       </div>
-      <p className='md:text-2xl font-semibold text-grey-1 font-zen hidden md:block'>Dictionary</p>
+      <p className='md:text-2xl font-semibold text-grey-1 font-play hidden md:block header-text-2'>Dictionary</p>
     </div>
   )
 }

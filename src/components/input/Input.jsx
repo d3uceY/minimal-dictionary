@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useInput } from '../../context/InputContext'
 import './inputStyle.css'
+import search from '../../assets/search.svg'
 
 
 export default function Input() {
@@ -51,7 +52,7 @@ export default function Input() {
             onClick={handleSubmit}
             aria-label='press enter to search'
           >
-            <img src="/src/assets/search.svg" alt="search-icon" />
+            <img src={search} alt="search-icon" />
           </button>
         </div>
 

@@ -8,7 +8,6 @@ import gsap from 'gsap'
 function App() {
   const comp = useRef(null)
 
-
   useLayoutEffect(() => {
     let ctx = gsap.context(() => {
       const t1 = gsap.timeline()
@@ -23,13 +22,15 @@ function App() {
           x: '-100%',
           duration: 1,
           ease: "circ.inOut",
-          delay: .25
+          delay: .25,
+          opacity: 0
         })
 
         .to('#intro-2', {
           x: '100%',
           duration: 1,
           ease: "circ.inOut",
+          opacity: 0
         })
 
         .to(".overlay", {

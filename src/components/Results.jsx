@@ -4,14 +4,17 @@ import { useInput } from '../context/InputContext'
 import Meaning from './Meaning.jsx'
 import Phonetic from './Phonetic'
 import PartOfSpeech from './PartOfSpeech.jsx'
-
+import { useResponse } from '../context/InputContext'
+import gsap from 'gsap'
 
 axios.defaults.baseURL = "https://api.dictionaryapi.dev/api/v2/entries/en"
 
 
 export default function Results() {
-    //state for the response gotten from the api
-    const [response, setResponse] = useState("")
+
+
+    //state for the response gotten from the api (the state is stored in the input context)
+    const { response, setResponse } = useResponse()
 
     //state for catching the error
     const [error, setError] = useState(null)
@@ -40,11 +43,16 @@ export default function Results() {
     const { inputValue } = useInput()
 
 
+
+    //this funtions runs whenever useeffect detects that the inputValue has changed.
+    //(param) is the inputValue
     const fetchData = async (param) => {
 
         try {
+            //loading state is set to true
             setLoading(true);
 
+            //this holds takes the response from axios
             const res = await axios(`/${param}`)
 
             setResponse(res.data)
@@ -74,6 +82,10 @@ export default function Results() {
         }
     }
 
+
+
+    //this function runs once the input value changes, when function is run
+    //fetch data sync funtion will run to fetch the api
     useEffect(() => {
 
         if (inputValue.length) {
@@ -100,7 +112,7 @@ export default function Results() {
     if (error) {
 
         return (
-            <div className='ml-4 flex items-center'>
+            <div className='ml-4 lg:ml-7 flex items-center'>
                 <p className='text-grey-4'>
                     <span className='font-mono text-2xl font-semibold'>ERROR: 404</span>
                     <br />
@@ -113,14 +125,11 @@ export default function Results() {
 
 
 
-//  
-
-
     return (
-        <div className="results px-6 flex h-screen items-center">
+        <div className="results lg:px-11 px-6 flex h-screen items-center">
             {response && (
                 <div>
-                    <h2 className='font-mono text-[2rem] md:text-[5rem] lg:text-[10rem] text-grey-4' id='word'>{word}</h2>
+                    <h2 className='font-mono text-[2rem] md:text-[5rem] lg:text-[10rem] text-grey-4 lowercase' id='word'>{word}</h2>
                     <div className='font-edu lg:text-2xl md:text-xl mb-3 font-bold flex items-center gap-4' id='phonetics'>
                         <Phonetic mean={phonetic} />
                         <PartOfSpeech mean={partOfSpeach} />

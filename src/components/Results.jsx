@@ -32,6 +32,10 @@ export default function Results() {
     const [partOfSpeach, setPartOfSpeach] = useState('')
 
 
+    //this is the state that holds the word
+    const [word, setWord] = useState("")
+
+
     //this contains the state from the context api holding the value from the input
     const { inputValue } = useInput()
 
@@ -44,6 +48,8 @@ export default function Results() {
             const res = await axios(`/${param}`)
 
             setResponse(res.data)
+
+            setWord(param)
 
             setMeaning(res.data[0].meanings[0].definitions[0].definition)
 
@@ -79,14 +85,13 @@ export default function Results() {
 
 
 
-
     if (loading) {
         return (
-            <div className='flex h-screen items-center pl-4'>
+            <div className='flex h-screen items-center px-4'>
                 <div className='flex flex-col animate-pulse w-[600px] max-w-lg'>
-                    <div className='md:h-[8rem] h-[4rem] bg-grey-2 mb-3 w-full rounded-2xl'></div>
-                    <div className='md:h-[4rem] h-[2rem] bg-grey-2 w-full rounded-2xl'></div>
-                    <div className='md:h-[10rem] h-[5rem] bg-grey-2 mt-4 w-full rounded-2xl'></div>
+                    <div className='md:h-[8rem] h-[4rem] bg-grey-3 mb-3 w-full rounded-2xl'></div>
+                    <div className='md:h-[4rem] h-[2rem] bg-grey-3 w-full rounded-2xl'></div>
+                    <div className='md:h-[10rem] h-[5rem] bg-grey-3 mt-4 w-full rounded-2xl'></div>
                 </div>
             </div>
         )
@@ -108,14 +113,14 @@ export default function Results() {
 
 
 
-
+//  
 
 
     return (
-        <div className="results pl-6 flex h-screen items-center">
+        <div className="results px-6 flex h-screen items-center">
             {response && (
                 <div>
-                    <h2 className='font-mono text-[2rem] md:text-[5rem] lg:text-[10rem] text-grey-4' id='word'>{inputValue}</h2>
+                    <h2 className='font-mono text-[2rem] md:text-[5rem] lg:text-[10rem] text-grey-4' id='word'>{word}</h2>
                     <div className='font-edu lg:text-2xl md:text-xl mb-3 font-bold flex items-center gap-4' id='phonetics'>
                         <Phonetic mean={phonetic} />
                         <PartOfSpeech mean={partOfSpeach} />

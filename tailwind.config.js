@@ -7,10 +7,10 @@ export default {
   theme: {
     extend: {
       colors: {
-        "grey-1": "#FDF7E4",
-        "grey-2": "#FAEED1",
-        "grey-3": "#DED0B6",
-        "grey-4": "#BBAB8C"
+        "grey-1": "#EEEEEE",
+        "grey-2": "#00ADB5",
+        "grey-3": "#393E46",
+        "grey-4": "#222831"
       },
       fontFamily: {
         'edu': ['"Edu TAS Beginner"', 'cursive'],

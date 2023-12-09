@@ -43,13 +43,15 @@ export default function Input() {
             onChange={handleInputChange}
             onKeyDown={handleKeyDown}
             value={value}
+            aria-label='search bar. press enter to search'
           />
 
           <button
             className='w-[20%] flex justify-center items-center bg-grey-3 active:bg-grey-2 '
             onClick={handleSubmit}
+            aria-label='press enter to search'
           >
-            <img className='' src="/src/assets/search.svg" alt="search-icon" />
+            <img src="/src/assets/search.svg" alt="search-icon" />
           </button>
         </div>
 

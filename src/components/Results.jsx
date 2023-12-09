@@ -129,12 +129,23 @@ export default function Results() {
         <div className="results lg:px-11 px-6 flex h-screen items-center">
             {response && (
                 <div>
-                    <h2 className='font-mono text-[2rem] md:text-[5rem] lg:text-[10rem] text-grey-4 lowercase' id='word'>{word}</h2>
-                    <div className='font-edu lg:text-2xl md:text-xl mb-3 font-bold flex items-center gap-4' id='phonetics'>
+                    <h2 className='font-mono text-[2rem] md:text-[5rem] lg:text-[10rem] text-grey-4 lowercase'
+                        id='word'
+                        tabIndex="0"
+                        aria-label={`the word is ${word}`}>
+                        {word}
+                    </h2>
+                    <div className='font-edu lg:text-2xl md:text-xl mb-3 font-bold flex items-center gap-4'
+                        id='phonetics'
+                        tabIndex="0"
+                        aria-label={`part of speach is ${partOfSpeach}`}>
                         <Phonetic mean={phonetic} />
                         <PartOfSpeech mean={partOfSpeach} />
                     </div>
-                    <div className='font-mono max-w-md text-grey-4 md:text-[1.5rem] lg:text-[2rem] mt-7' id='meaning'>
+                    <div className='font-mono max-w-md text-grey-4 md:text-[1.5rem] lg:text-[2rem] mt-7'
+                        id='meaning'
+                        tabIndex="0"
+                        aria-label={`definition for ${word} is ${meaning}`}>
                         <Meaning mean={meaning} />
                     </div>
                 </div>

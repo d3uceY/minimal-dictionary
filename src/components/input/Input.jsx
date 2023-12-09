@@ -34,7 +34,7 @@ export default function Input() {
 
   return (
     <div className='input-wrapper p-4 bg-grey-4 flex gap-2 md:flex-col justify-center md:justify-between items-center md:h-screen md:w-1/3'>
-      <h1 className='md:text-2xl hidden md:block font-semibold text-grey-1 font-play header-text-1'>Minimal</h1>
+      <h1 className='md:text-2xl hidden md:block font-semibold text-grey-1 font-play header-text-1'>Minimalist</h1>
       <div>
         <div className='input-container max-w-[300px] flex mx-auto h-[48px] rounded-lg overflow-hidden'>
           <input

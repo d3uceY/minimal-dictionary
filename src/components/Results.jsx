@@ -61,7 +61,7 @@ export default function Results() {
 
             setMeaning(res.data[0].meanings[0].definitions[0].definition)
 
-            setPhonetic(res.data[0].phonetics[1].text)
+            setPhonetic(res.data[0].phonetics[0].text)
 
             setPartOfSpeach(res.data[0].meanings[0].partOfSpeech)
 

@@ -99,7 +99,7 @@ export default function Results() {
 
     if (loading) {
         return (
-            <div className='flex h-screen items-center px-4'>
+            <div className='flex h-[75vh] lg:h-screen items-center px-4'>
                 <div className='flex flex-col animate-pulse w-[600px] max-w-lg'>
                     <div className='md:h-[8rem] h-[4rem] bg-grey-3 mb-3 w-full rounded-2xl'></div>
                     <div className='md:h-[4rem] h-[2rem] bg-grey-3 w-full rounded-2xl'></div>
@@ -112,7 +112,7 @@ export default function Results() {
     if (error) {
 
         return (
-            <div className='ml-4 lg:ml-7 flex items-center'>
+            <div className='ml-4 lg:ml-7 h-[75vh] lg:h-screen flex items-center'>
                 <p className='text-grey-4'>
                     <span className='font-mono text-2xl font-semibold'>ERROR: 404</span>
                     <br />
@@ -126,10 +126,10 @@ export default function Results() {
 
 
     return (
-        <div className="results lg:px-11 px-6 flex h-screen items-center">
+        <div className="results lg:px-11 px-6 flex h-[75vh] lg:h-screen items-center">
             {response && (
                 <div>
-                    <h2 className='font-mono text-[2rem] md:text-[5rem] lg:text-[10rem] text-grey-4 lowercase'
+                    <h2 className='font-mono text-[2rem] md:text-[5rem] lg:text-[7rem] text-grey-4 lowercase'
                         id='word'
                         tabIndex="0"
                         aria-label={`the word is ${word}`}>
@@ -142,7 +142,7 @@ export default function Results() {
                         <Phonetic mean={phonetic} />
                         <PartOfSpeech mean={partOfSpeach} />
                     </div>
-                    <div className='font-mono max-w-md text-grey-4 md:text-[1.5rem] lg:text-[2rem] mt-7'
+                    <div className='font-mono max-w-md text-grey-4 md:text-[1.5rem] mt-7'
                         id='meaning'
                         tabIndex="0"
                         aria-label={`definition for ${word} is ${meaning}`}>

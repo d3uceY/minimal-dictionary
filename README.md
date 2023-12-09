@@ -1,6 +1,6 @@
 
 
-```markdown
+
 # Minimal Dictionary
 
 Minimal Dictionary is a simple and sleek dictionary app built with React and Tailwind CSS. It uses the Dictionary API to fetch definitions, phonetics, and parts of speech for any given word. 
@@ -14,16 +14,16 @@ Minimal Dictionary is a simple and sleek dictionary app built with React and Tai
 ## Installation
 
 1. Clone the repository:
-   ```bash
+   ```sh
    git clone https://github.com/d3uceY/minimal-dictionary.git
    ```
 2. Install the dependencies:
-   ```bash
+   ```sh
    cd minimal-dictionary
    npm install
    ```
 3. Start the development server:
-   ```bash
+   ```sh
    npm run dev
    ```
 
@@ -33,6 +33,6 @@ Enter a word in the search bar and press Enter. The app will display the definit
 
 ## Contributing
 
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+> Note: Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
 Please replace `https://github.com/d3uceY/minimal-dictionary.git` with the actual URL of your GitHub repository. Also, feel free to modify this draft to better suit your needs. 😊

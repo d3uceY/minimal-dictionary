@@ -4,6 +4,7 @@ import { InputContextProvider } from './context/InputContext.jsx'
 import Results from './components/Results.jsx'
 import { useRef, useLayoutEffect } from 'react'
 import gsap from 'gsap'
+import github from './assets/github.svg'
 
 function App() {
   const comp = useRef(null)
@@ -73,6 +74,9 @@ function App() {
           <Input />
           <Results />
         </main>
+        <a href='https://github.com/d3uceY/minimal-dictionary' target='_blank' className='absolute right-3 bottom-3' aria-label='my github'>
+           <img className='w-10' src={github} alt="this is github icon" />
+        </a>
       </div>
     </InputContextProvider>
   )

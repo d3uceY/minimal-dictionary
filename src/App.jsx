@@ -64,7 +64,7 @@ function App() {
     <InputContextProvider>
       <div className="app bg-grey-1 min-h-screen relative overflow-hidden" ref={comp}>
         <div className=' overlay absolute bg-grey-1 top-0 left-0 z-10 w-full h-full'>
-          <div id='intro-1' className='text-[15vw] md:text-[20vw] top-[20%] lg:text-[25vw] absolute lg:top-[1%] font-play text-grey-4 translate-x-[-100%] opacity-[0.1]'>Minimal</div>
+          <div id='intro-1' className='text-[15vw] md:text-[20vw]  lg:text-[25vw] absolute inset-0 m-auto font-play text-grey-4 translate-x-[-100%] opacity-[0.1]'>Minimal</div>
           <div className='quote-text font-edu p-5 text-2xl max-w-md opacity-0'>
             "In the sparse pages of a dictionary, find the essence of minimalism—where each word holds its place with purpose, and simplicity unveils the true richness of language."
           </div>

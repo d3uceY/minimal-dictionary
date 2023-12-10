@@ -3,7 +3,7 @@
 
 # Minimal Dictionary
 
-Minimal Dictionary is a simple and sleek dictionary app built with React and Tailwind CSS. It uses the Dictionary API to fetch definitions, phonetics, and parts of speech for any given word. 
+Minimal Dictionary is a user-friendly app built with React and Tailwind CSS. It uses the Dictionary API for comprehensive language understanding. The app is designed with accessibility in mind, making it compatible with screen readers and user-friendly for visually impaired users. Its minimalist design and high-contrast color scheme enhance readability, making it a useful tool for users with dyslexia and color vision deficiency. Minimal Dictionary is not just an app, but a commitment to a more inclusive digital experience.
 
 ## Features
 

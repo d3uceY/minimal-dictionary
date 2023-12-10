@@ -68,7 +68,7 @@ export default function Results() {
 
 
 
-
+    
     //this funtions runs whenever useeffect detects that the inputValue has changed.
     //(param) is the inputValue
     const fetchData = async (param) => {

@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useLayoutEffect, useRef, useReducer } from 'react'
+import React, { useEffect, useState, useLayoutEffect, useRef } from 'react'
 import gsap from 'gsap'
 import axios from 'axios'
 import { useInput } from '../context/InputContext'
@@ -130,7 +130,7 @@ export default function Results() {
             <div className='flex h-[75vh] lg:h-screen items-center px-4'>
                 <div className='flex flex-col animate-pulse w-[600px] max-w-lg'>
                     <div className='md:h-[8rem] h-[4rem] bg-grey-3 mb-3 w-full rounded-2xl'></div>
-                    <div className='md:h-[4rem] h-[2rem] bg-grey-3 w-full rounded-2xl'></div>
+                    <div className='md:h-[4rem] h-[2rem] bg-grey-3 w-[40%] rounded-2xl'></div>
                     <div className='md:h-[10rem] h-[5rem] bg-grey-3 mt-4 w-full rounded-2xl'></div>
                 </div>
             </div>
@@ -174,7 +174,7 @@ export default function Results() {
                     <div className='font-edu lg:text-2xl md:text-xl mb-3 font-bold flex items-center gap-4'
                         id='phonetics'
                         tabIndex="0"
-                        aria-label={`part of speach is ${partOfSpeach}`}>
+                        aria-label={`the part of speach is ${partOfSpeach}`}>
                         <Phonetic mean={phonetic} />
                         <PartOfSpeech mean={partOfSpeach} />
                     </div>
@@ -182,7 +182,7 @@ export default function Results() {
                     <div className='font-mono max-w-md text-grey-4 md:text-[1.5rem] mt-7'
                         id='meaning'
                         tabIndex="0"
-                        aria-label={`definition for ${word} is ${meaning}`}>
+                        aria-label={`definition for the word, ${word} is ${meaning}`}>
                         <Meaning mean={meaning} />
                     </div>
 

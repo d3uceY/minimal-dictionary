@@ -14,21 +14,36 @@ export default function Input() {
   //value of the input temporarily
   const [value, setValue] = useState("")
 
+
+  //whenever the input value changes, it runs a function that updates the value state
   const handleInputChange = (e) => {
+
     setValue(e.target.value)
+
   }
 
+
+  //this funtion runs when any key is pressed and it checks whether the key is an Enter key
+  //then it sets inputValue to hold the value and removes it from value
   const handleKeyDown = (e) => {
+
     if (e.key === "Enter") {
+
       setInputValue(value)
+
       setValue("")
+
     }
   }
 
 
+  //does the same thing the code above does
   const handleSubmit = () => {
+
     setInputValue(value)
+
     setValue("")
+
   }
 
 
@@ -36,11 +51,11 @@ export default function Input() {
     <header className='input-wrapper p-4 bg-grey-4 flex gap-2 md:flex-col justify-center md:justify-between items-center md:h-screen md:w-1/3'>
       <h1 className='md:text-2xl hidden md:block font-semibold text-grey-1 font-play header-text-1'>Minimalist</h1>
       <div>
-        <div className='input-container max-w-[300px] flex mx-auto h-[48px] rounded-lg overflow-hidden'>
+        <div className='input-container max-w-[300px] flex mx-auto h-[48px] rounded-lg overflow-hidden focus-within:outline focus-within:outline-2 focus-within:outline-offset-0 focus-within:outline-grey-2'>
           <input
             type="text"
             placeholder='search'
-            className='w-[80%] p-4 bg-grey-1 placeholder:text-grey-3 placeholder:capitalize text-grey-4 font-semibold'
+            className='w-[80%] p-4 bg-grey-1 placeholder:text-grey-3 placeholder:capitalize text-grey-4 font-semibold '
             onChange={handleInputChange}
             onKeyDown={handleKeyDown}
             value={value}
@@ -48,7 +63,7 @@ export default function Input() {
           />
 
           <button
-            className='w-[20%] flex justify-center items-center bg-grey-3 active:bg-grey-2 '
+            className='w-[20%] flex justify-center items-center bg-grey-3 active:bg-grey-2'
             onClick={handleSubmit}
             aria-label='press enter to search'
           >

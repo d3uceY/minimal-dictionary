@@ -35,7 +35,6 @@ Enter a word in the search bar and press Enter. The app will display the definit
 
 > Note: Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-Please replace `https://github.com/d3uceY/minimal-dictionary.git` with the actual URL of your GitHub repository. Also, feel free to modify this draft to better suit your needs. 😊
 
 
 ## End Note

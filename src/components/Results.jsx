@@ -1,18 +1,16 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useLayoutEffect, useRef, useReducer } from 'react'
+import gsap from 'gsap'
 import axios from 'axios'
 import { useInput } from '../context/InputContext'
 import Meaning from './Meaning.jsx'
 import Phonetic from './Phonetic'
 import PartOfSpeech from './PartOfSpeech.jsx'
 import { useResponse } from '../context/InputContext'
-import gsap from 'gsap'
 
 axios.defaults.baseURL = "https://api.dictionaryapi.dev/api/v2/entries/en"
 
 
 export default function Results() {
-
-
     //state for the response gotten from the api (the state is stored in the input context)
     const { response, setResponse } = useResponse()
 
@@ -41,6 +39,33 @@ export default function Results() {
 
     //this contains the state from the context api holding the value from the input
     const { inputValue } = useInput()
+
+
+    //gsap code
+    const comp = useRef()
+
+    useLayoutEffect(() => {
+
+        const ctx = gsap.context(() => {
+
+            const t1 = gsap.timeline()
+
+            t1.from(["#word", "#phonetics", "#meaning"], {
+                opacity: 0,
+                stagger: .5,
+                duration: .5,
+                y:10
+            })
+
+        }, comp)
+
+        return () => ctx.revert()
+
+        //when response changes, the code will run
+    }, [response])
+
+    //gsap code
+
 
 
 
@@ -93,12 +118,15 @@ export default function Results() {
             fetchData(inputValue)
 
         }
+
     }, [inputValue])
 
 
-
+    //if loading is true 
     if (loading) {
+
         return (
+
             <div className='flex h-[75vh] lg:h-screen items-center px-4'>
                 <div className='flex flex-col animate-pulse w-[600px] max-w-lg'>
                     <div className='md:h-[8rem] h-[4rem] bg-grey-3 mb-3 w-full rounded-2xl'></div>
@@ -106,12 +134,16 @@ export default function Results() {
                     <div className='md:h-[10rem] h-[5rem] bg-grey-3 mt-4 w-full rounded-2xl'></div>
                 </div>
             </div>
+
         )
     }
 
+
+    //if there is an error
     if (error) {
 
         return (
+
             <div className='ml-4 lg:ml-7 h-[75vh] lg:h-screen flex items-center'>
                 <p className='text-grey-4'>
                     <span className='font-mono text-2xl font-semibold'>ERROR: 404</span>
@@ -119,15 +151,18 @@ export default function Results() {
                     not found
                 </p>
             </div>
+
         )
     }
 
 
 
-
     return (
-        <div className="results lg:px-11 px-6 flex h-[75vh] lg:h-screen items-center">
+
+        <div ref={comp} className="results lg:px-11 px-6 flex h-[75vh] lg:h-screen items-center">
+
             {response && (
+
                 <div>
                     <h2 className='font-mono text-[2rem] md:text-[5rem] lg:text-[7rem] text-grey-4 lowercase'
                         id='word'
@@ -135,6 +170,7 @@ export default function Results() {
                         aria-label={`the word is ${word}`}>
                         {word}
                     </h2>
+
                     <div className='font-edu lg:text-2xl md:text-xl mb-3 font-bold flex items-center gap-4'
                         id='phonetics'
                         tabIndex="0"
@@ -142,14 +178,18 @@ export default function Results() {
                         <Phonetic mean={phonetic} />
                         <PartOfSpeech mean={partOfSpeach} />
                     </div>
+
                     <div className='font-mono max-w-md text-grey-4 md:text-[1.5rem] mt-7'
                         id='meaning'
                         tabIndex="0"
                         aria-label={`definition for ${word} is ${meaning}`}>
                         <Meaning mean={meaning} />
                     </div>
+
                 </div>
+
             )}
         </div>
     )
+
 }

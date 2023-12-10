@@ -36,3 +36,8 @@ Enter a word in the search bar and press Enter. The app will display the definit
 > Note: Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
 Please replace `https://github.com/d3uceY/minimal-dictionary.git` with the actual URL of your GitHub repository. Also, feel free to modify this draft to better suit your needs. 😊
+
+
+## End Note
+
+>Feel free to use this project as a reference or a starting point for your own applications. If you do use it, please give credit where it's due. Additionally, if you see areas for improvement or have ideas to make this project better, your contributions are welcome. Let's work together to create more inclusive and accessible digital experience.
